@@ -4,10 +4,10 @@ session_start();
 // Flash message helper
 // EXAMPLE - flash('register_succes', 'You are now registered');
 // DISPLAY IN VIEW - echo flash('register_succes');
-function flash($name = '', $message = '', $class = 'alert-succes')
+function flash($name = '', $message = '', $class = 'alert-success rounded m-2 p-2')
 {
     if (!empty($name)) {
-        if (!empty($message) && empty($_SESSION['name'])) {
+        if (!empty($message) && empty($_SESSION[$name])) {
             if (!empty($_SESSION[$name])) {
                 unset($_SESSION[$name]);
             }
@@ -18,7 +18,7 @@ function flash($name = '', $message = '', $class = 'alert-succes')
 
             $_SESSION[$name] = $message;
             $_SESSION[$name . '_class'] = $class;
-        } elseif (empty($message) && !empty($_SESSION['name'])) {
+        } elseif (empty($message) && !empty($_SESSION[$name])) {
             $class = !empty($_SESSION[$name . '_class']) ? $_SESSION[$name . '_class'] : '';
             echo '<div class="' . $class . '" id="msg-flash">' . $_SESSION[$name] . '</div>';
             unset($_SESSION[$name]);
