@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<a href="<?php echo URLROOT ?>/posts" class="btn btn-light"><i class="fa fa-pencil"></i>Back</a>
+<a href="<?php echo URLROOT ?>/posts" class="btn btn-primary"><i class="fa fa-pencil"></i>Back</a>
 <div class="card card-body bg-light mt-5">
     <h2>Edit Post</h2>
     <p>Create a post with this form</p>
